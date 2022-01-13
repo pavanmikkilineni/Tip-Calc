@@ -11,7 +11,13 @@ import SwiftUI
 struct Tip_CalcApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                TipCalcView()
+                    .navigationTitle("Tip Calc 🧾")
+            }
+            .navigationViewStyle(.stack)
+            .environmentObject(TipCalcViewModel())
+            
         }
     }
 }
