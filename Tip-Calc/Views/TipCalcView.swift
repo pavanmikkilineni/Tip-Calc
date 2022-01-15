@@ -10,8 +10,9 @@ import SwiftUI
 struct TipCalcView: View {
     
     //MARK: PROPERTIES
-    @EnvironmentObject var viewModel:TipCalcViewModel
+    @EnvironmentObject private var viewModel:TipCalcViewModel
     @FocusState private var isActive:Bool
+    private let percentages:[Int] = [5,10,15,20]
     
     //MARK: INIT
     init(){
@@ -26,7 +27,7 @@ struct TipCalcView: View {
     
     //MARK: BODY
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators:false){
             VStack(spacing:10){
                 TitleView(title: "Bill Amount")
                 textField
@@ -35,40 +36,52 @@ struct TipCalcView: View {
                 TitleView(title: "Split")
                 SplitStepper(split: $viewModel.split)
                 TitleView(title: "Per Person")
-                ResultCardView(
-                    totalAmount: viewModel.perPersonTotalAmount,
-                    subTotalAmount: viewModel.perPersonSubTotalAmount,
-                    tipAmount: viewModel.perPersonTipAmount
-                )
-                    .frame(height:125)
+                perPersonResultSection
                 TitleView(title: "Total")
-                ResultCardView(
-                    totalAmount: viewModel.totalAmount,
-                    subTotalAmount: viewModel.subTotalAmount,
-                    tipAmount: viewModel.tipAmount
-                )
-                    .frame(height:125)
+                totalResultSection
             }
             .padding()
         }
         
     }
     
-    var picker: some View{
+}
+
+extension TipCalcView{
+    
+    private var perPersonResultSection:some View{
+        ResultCardView(
+            totalAmount: viewModel.perPersonTotalAmount,
+            subTotalAmount: viewModel.perPersonSubTotalAmount,
+            tipAmount: viewModel.perPersonTipAmount
+        )
+            .frame(height:125)
+        
+    }
+    
+    private var totalResultSection:some View{
+        ResultCardView(
+            totalAmount: viewModel.totalAmount,
+            subTotalAmount: viewModel.subTotalAmount,
+            tipAmount: viewModel.tipAmount
+        )
+            .frame(height:125)
+    }
+    
+    private var picker: some View{
         Picker(
             selection: $viewModel.selection,
             label: Text("Percentage"),
             content:{
-                Text("5%").tag(0.05)
-                Text("10%").tag(0.10)
-                Text("15%").tag(0.15)
-                Text("20%").tag(0.20)
+                ForEach(percentages.indices,id:\.self){ percent in
+                    Text("\(percentages[percent])%").tag(percent)
+                }
             }
         )
             .pickerStyle(.segmented)
     }
     
-    var textField: some View{
+    private var textField: some View{
         HStack{
             Text("$")
                 .font(.system(size:60,weight: .black,design: .rounded))
@@ -84,10 +97,8 @@ struct TipCalcView: View {
                         }
                     }
                 })
-                
-        }
-    }
-    
+                }
+   }
 }
 
 struct TipCalcView_Previews: PreviewProvider {

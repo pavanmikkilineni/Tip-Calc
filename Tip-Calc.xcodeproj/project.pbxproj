@@ -15,10 +15,11 @@
 		39CDC37A279001DC00B9C10F /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDC379279001D600B9C10F /* TitleView.swift */; };
 		39CDC37C27900C8B00B9C10F /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDC37B27900C8A00B9C10F /* ResultCardView.swift */; };
 		39CDC37E2790200E00B9C10F /* TipCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDC37D2790200D00B9C10F /* TipCalcViewModel.swift */; };
+		39EDF50F2792B12E00618DDA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39EDF50E2792B12D00618DDA /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		396D8A932788751D0013C179 /* Tip-Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip-Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		396D8A932788751D0013C179 /* Tip Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		396D8A962788751D0013C179 /* Tip_CalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip_CalcApp.swift; sourceTree = "<group>"; };
 		396D8A9A2788754C0013C179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		396D8A9D2788754C0013C179 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -27,6 +28,8 @@
 		39CDC379279001D600B9C10F /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		39CDC37B27900C8A00B9C10F /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
 		39CDC37D2790200D00B9C10F /* TipCalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalcViewModel.swift; sourceTree = "<group>"; };
+		39EDF50D2792AA8500618DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		39EDF50E2792B12D00618DDA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +54,7 @@
 		396D8A942788751D0013C179 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				396D8A932788751D0013C179 /* Tip-Calc.app */,
+				396D8A932788751D0013C179 /* Tip Calc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,11 +62,13 @@
 		396D8A952788751D0013C179 /* Tip-Calc */ = {
 			isa = PBXGroup;
 			children = (
+				39EDF50D2792AA8500618DDA /* Info.plist */,
 				396D8A962788751D0013C179 /* Tip_CalcApp.swift */,
 				396D8AA5278879B20013C179 /* ViewModels */,
 				396D8AA4278879AC0013C179 /* Views */,
 				396D8A9A2788754C0013C179 /* Assets.xcassets */,
 				396D8A9C2788754C0013C179 /* Preview Content */,
+				39EDF50E2792B12D00618DDA /* Launch Screen.storyboard */,
 			);
 			path = "Tip-Calc";
 			sourceTree = "<group>";
@@ -112,7 +117,7 @@
 			);
 			name = "Tip-Calc";
 			productName = "Tip-Calc";
-			productReference = 396D8A932788751D0013C179 /* Tip-Calc.app */;
+			productReference = 396D8A932788751D0013C179 /* Tip Calc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39EDF50F2792B12E00618DDA /* Launch Screen.storyboard in Resources */,
 				396D8A9E2788754C0013C179 /* Preview Assets.xcassets in Resources */,
 				396D8A9B2788754C0013C179 /* Assets.xcassets in Resources */,
 			);
@@ -303,11 +309,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tip-Calc/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tip-Calc/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,10 +324,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.badguy.Tip-Calc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tip Calc";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,11 +341,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tip-Calc/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tip-Calc/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,10 +356,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.badguy.Tip-Calc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tip Calc";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Tip_CalcApp: App {
+    
+    @StateObject private var viewModel:TipCalcViewModel = TipCalcViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView{
@@ -16,7 +19,7 @@ struct Tip_CalcApp: App {
                     .navigationTitle("Tip Calc 🧾")
             }
             .navigationViewStyle(.stack)
-            .environmentObject(TipCalcViewModel())
+            .environmentObject(viewModel)
             
         }
     }

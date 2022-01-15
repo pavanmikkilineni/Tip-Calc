@@ -14,7 +14,7 @@ class TipCalcViewModel : ObservableObject{
             calculateTip()
         }
     }
-    @Published var selection:Double = 0.05
+    @Published var selection:Int = 0
     {
         didSet{
             calculateTip()
@@ -34,11 +34,13 @@ class TipCalcViewModel : ObservableObject{
     @Published var perPersonSubTotalAmount:Double = 0.00
     @Published var perPersonTipAmount:Double = 0.00
     
+    private let percentages = [0.05,0.10,0.15,0.20]
+    
     
     func calculateTip(){
         let bill = Double(text) ?? 0.00
         let persons = Double(split) 
-        tipAmount = bill * selection
+        tipAmount = bill * percentages[selection]
         perPersonTipAmount = tipAmount / persons
         subTotalAmount = bill
         perPersonSubTotalAmount = bill / persons
